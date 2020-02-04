@@ -1,0 +1,8 @@
+node_modules
+build
+dev
+dist
+logs
+package-lock.json
+yarn.lock
+cypress/videos

@@ -1,0 +1,9 @@
+src/
+logs/
+dist/
+dev/
+node_modules/
+documentation/
+^(.*/)?gruntfile\.js
+^(.*/)?queries_en_pg\.sql
+cypress/videos
