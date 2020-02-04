@@ -9,7 +9,7 @@
   "author": "edisonv",
   "license": "ISC",
   "devDependencies": {
-    "cypress": "^3.8.2"
+    "cypress": "^3.8.3"
   },
   "dependencies": {
     "node": "^13.7.0"
