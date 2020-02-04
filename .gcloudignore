@@ -6,4 +6,4 @@ node_modules/
 documentation/
 ^(.*/)?gruntfile\.js
 ^(.*/)?queries_en_pg\.sql
-cypress/videos
+videos
