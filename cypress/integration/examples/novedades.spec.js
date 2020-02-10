@@ -82,11 +82,11 @@ describe('Novedades de recogidas', function () {
     cy.get('#mat-input-1').type('pruebas')
     cy.get('.mat-icon').click()
     cy.get('.app-button').click()
-    cy.get('.dashboard-table').find('.information-cell-team').contains('77 Envigado Centro Integral City Plaza').click()
+    cy.get('.dashboard-table').find('.information-cell-team').contains('2 Centro').click()
 
     cy.get('.novelties-index-container').find('.novelty-colum').find('.list-novelty').wait(2000).find('.list-card-novelty').each(($el, index, $list) => {
       const NumberGuia = $el.find('h3.parcel-number').text()
-      if (NumberGuia.includes('03200098249')) {
+      if (NumberGuia.includes('20025027626')) {
         $el.find('button').first().click()
       }
     })
@@ -104,11 +104,11 @@ describe('Novedades de recogidas', function () {
     cy.get('#mat-input-1').type('pruebas')
     cy.get('.mat-icon').click()
     cy.get('.app-button').click()
-    cy.get('.dashboard-table').find('.information-cell-team').contains('77 Envigado Centro Integral City Plaza').click()
+    cy.get('.dashboard-table').find('.information-cell-team').contains('2 Centro').click()
 
     cy.get('.novelties-index-container').find('.novelty-colum').find('.list-novelty').wait(2000).find('.list-card-novelty').each(($el, index, $list) => {
       const NumberGuia = $el.find('h3.parcel-number').text()
-      if (NumberGuia.includes('03200098250')) {
+      if (NumberGuia.includes('20025027629')) {
         $el.find('button').first().click()
       }
     })
@@ -126,11 +126,11 @@ describe('Novedades de recogidas', function () {
     cy.get('#mat-input-1').type('pruebas')
     cy.get('.mat-icon').click()
     cy.get('.app-button').click()
-    cy.get('.dashboard-table').find('.information-cell-team').contains('77 Envigado Centro Integral City Plaza').click()
+    cy.get('.dashboard-table').find('.information-cell-team').contains('2 Centro').click()
 
     cy.get('.novelties-index-container').find('.novelty-colum').find('.list-novelty').wait(2000).find('.list-card-novelty').each(($el, index, $list) => {
       const NumberGuia = $el.find('h3.parcel-number').text()
-      if (NumberGuia.includes('03200098251')) {
+      if (NumberGuia.includes('03200098285')) {
         $el.find('button').first().click()
       }
     })
@@ -146,11 +146,11 @@ describe('Novedades de recogidas', function () {
     cy.get('#mat-input-1').type('pruebas')
     cy.get('.mat-icon').click()
     cy.get('.app-button').click()
-    cy.get('.dashboard-table').find('.information-cell-team').contains('77 Envigado Centro Integral City Plaza').click()
+    cy.get('.dashboard-table').find('.information-cell-team').contains('2 Centro').click()
 
     cy.get('.novelties-index-container').find('.novelty-colum').find('.list-novelty').wait(2000).find('.list-card-novelty').each(($el, index, $list) => {
       const NumberGuia = $el.find('h3.parcel-number').text()
-      if (NumberGuia.includes('03200098252')) {
+      if (NumberGuia.includes('03200098286')) {
         $el.find('button').first().click()
       }
     })
@@ -166,11 +166,11 @@ describe('Novedades de recogidas', function () {
     cy.get('#mat-input-1').type('pruebas')
     cy.get('.mat-icon').click()
     cy.get('.app-button').click()
-    cy.get('.dashboard-table').find('.information-cell-team').contains('77 Envigado Centro Integral City Plaza').click()
+    cy.get('.dashboard-table').find('.information-cell-team').contains('2 Centro').click()
 
     cy.get('.novelties-index-container').find('.novelty-colum').find('.list-novelty').wait(2000).find('.list-card-novelty').each(($el, index, $list) => {
       const NumberGuia = $el.find('h3.parcel-number').text()
-      if (NumberGuia.includes('03200098249')) {
+      if (NumberGuia.includes('03200098287')) {
         $el.find('button').first().click()
       }
     })
@@ -185,11 +185,11 @@ describe('Novedades de recogidas', function () {
     cy.get('#mat-input-1').type('pruebas')
     cy.get('.mat-icon').click()
     cy.get('.app-button').click()
-    cy.get('.dashboard-table').find('.information-cell-team').contains('77 Envigado Centro Integral City Plaza').click()
+    cy.get('.dashboard-table').find('.information-cell-team').contains('2 Centro').click()
 
     cy.get('.novelties-index-container').find('.novelty-colum').find('.list-novelty').wait(2000).find('.list-card-novelty').each(($el, index, $list) => {
       const NumberGuia = $el.find('h3.parcel-number').text()
-      if (NumberGuia.includes('03200098250')) {
+      if (NumberGuia.includes('03200098288')) {
         $el.find('button').first().click()
       }
     })
@@ -205,11 +205,11 @@ describe('Novedades de recogidas', function () {
     cy.get('#mat-input-1').type('pruebas')
     cy.get('.mat-icon').click()
     cy.get('.app-button').click()
-    cy.get('.dashboard-table').find('.information-cell-team').contains('77 Envigado Centro Integral City Plaza').click()
+    cy.get('.dashboard-table').find('.information-cell-team').contains('2 Centro').click()
 
     cy.get('.novelties-index-container').find('.novelty-colum').find('.list-novelty').wait(2000).find('.list-card-novelty').each(($el, index, $list) => {
       const NumberGuia = $el.find('h3.parcel-number').text()
-      if (NumberGuia.includes('03200098251')) {
+      if (NumberGuia.includes('03200098289')) {
         $el.find('button').first().click()
       }
     })
