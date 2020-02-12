@@ -1,11 +1,12 @@
 describe('Novedades de recogidas', function () {
-
+    beforeEach(function(){
+      cy.visit("https://app-dot-cm-novedades-checkpoint-test.appspot.com/#/login");
+      cy.get('#mat-input-0').type('pruebas')
+      cy.get('#mat-input-1').type('pruebas')
+      cy.get('.mat-icon').click()
+      cy.get('.app-button').click()
+    })
     it('Novedades superiores - Cruzar contra faltante CM', function () {
-    cy.visit("https://app-dot-cm-novedades-checkpoint-test.appspot.com/#/login");
-    cy.get('#mat-input-0').type('pruebas')
-    cy.get('#mat-input-1').type('pruebas')
-    cy.get('.mat-icon').click()
-    cy.get('.app-button').click()
     cy.get('.dashboard-table').find('.clickable-element-row').contains(' 77 Envigado Centro Integral City Plaza ').click()
     cy.get('.novelties-index-container').find('.novelty-colum').find('.list-novelty').wait(2000).find('.list-card-novelty').each(($el, index, $list) => {
       const NumberGuia = $el.find('h3.parcel-number').text()
@@ -20,15 +21,10 @@ describe('Novedades de recogidas', function () {
   })
 
   it('Novedades superiores - Cruzar contra faltante cliente', function () {
-    cy.visit("https://app-dot-cm-novedades-checkpoint-test.appspot.com/#/login");
-    cy.get('#mat-input-0').type('pruebas')
-    cy.get('#mat-input-1').type('pruebas')
-    cy.get('.mat-icon').click()
-    cy.get('.app-button').click()
     cy.get('.dashboard-table').find('.clickable-element-row').contains(' 77 Envigado Centro Integral City Plaza ').click()
     cy.get('.novelties-index-container').find('.novelty-colum').find('.list-novelty').wait(2000).find('.list-card-novelty').each(($el, index, $list) => {
       const NumberGuia = $el.find('h3.parcel-number').text()
-      if (NumberGuia.includes('03200098242')) {
+      if (NumberGuia.includes('03200098240')) {
         $el.find('button').first().click()
       }
     })
@@ -39,11 +35,6 @@ describe('Novedades de recogidas', function () {
   })
 
   it('Novedades superiores - Devolver/cambio destino', function () {
-    cy.visit("https://app-dot-cm-novedades-checkpoint-test.appspot.com/#/login");
-    cy.get('#mat-input-0').type('pruebas')
-    cy.get('#mat-input-1').type('pruebas')
-    cy.get('.mat-icon').click()
-    cy.get('.app-button').click()
     cy.get('.dashboard-table').find('.clickable-element-row').contains(' 77 Envigado Centro Integral City Plaza ').click()
     cy.get('.novelties-index-container').find('.novelty-colum').find('.list-novelty').wait(2000).find('.list-card-novelty').each(($el, index, $list) => {
       const NumberGuia = $el.find('h3.parcel-number').text()
@@ -60,11 +51,6 @@ describe('Novedades de recogidas', function () {
   })
 
   it('Novedades superiores - Entregar sobrante a destinatario', function () {
-    cy.visit("https://app-dot-cm-novedades-checkpoint-test.appspot.com/#/login");
-    cy.get('#mat-input-0').type('pruebas')
-    cy.get('#mat-input-1').type('pruebas')
-    cy.get('.mat-icon').click()
-    cy.get('.app-button').click()
     cy.get('.dashboard-table').find('.clickable-element-row').contains(' 77 Envigado Centro Integral City Plaza ').click()
     cy.get('.novelties-index-container').find('.novelty-colum').find('.list-novelty').wait(2000).find('.list-card-novelty').each(($el, index, $list) => {
       
@@ -81,16 +67,11 @@ describe('Novedades de recogidas', function () {
     cy.get('.app-button').click()
   })
   it('Novedades Inferiores  - Cliente no despacho', function () {
-    cy.visit("https://app-dot-cm-novedades-checkpoint-test.appspot.com/#/login");
-    cy.get('#mat-input-0').type('pruebas')
-    cy.get('#mat-input-1').type('pruebas')
-    cy.get('.mat-icon').click()
-    cy.get('.app-button').click()
     cy.get('.dashboard-table').find('.information-cell-team').contains('2 Centro').click()
 
     cy.get('.novelties-index-container').find('.novelty-colum').find('.list-novelty').wait(2000).find('.list-card-novelty').each(($el, index, $list) => {
       const NumberGuia = $el.find('h3.parcel-number').text()
-      if (NumberGuia.includes('20025027626')) {
+      if (NumberGuia.includes('03200098310')) {
         $el.find('button').first().click()
       }
     })
@@ -104,16 +85,11 @@ describe('Novedades de recogidas', function () {
 
   })
   it('Novedades Inferiores  - Cerrado por el Cliente', function () {
-    cy.visit("https://app-dot-cm-novedades-checkpoint-test.appspot.com/#/login");
-    cy.get('#mat-input-0').type('pruebas')
-    cy.get('#mat-input-1').type('pruebas')
-    cy.get('.mat-icon').click()
-    cy.get('.app-button').click()
     cy.get('.dashboard-table').find('.information-cell-team').contains('2 Centro').click()
 
     cy.get('.novelties-index-container').find('.novelty-colum').find('.list-novelty').wait(2000).find('.list-card-novelty').each(($el, index, $list) => {
       const NumberGuia = $el.find('h3.parcel-number').text()
-      if (NumberGuia.includes('20025027629')) {
+      if (NumberGuia.includes('03200098310')) {
         $el.find('button').first().click()
       }
     })
@@ -127,36 +103,26 @@ describe('Novedades de recogidas', function () {
   })
 
   it('Novedades Inferiores  - Cerrar a Futura reclamación', function () {
-    cy.visit("https://app-dot-cm-novedades-checkpoint-test.appspot.com/#/login");
-    cy.get('#mat-input-0').type('pruebas')
-    cy.get('#mat-input-1').type('pruebas')
-    cy.get('.mat-icon').click()
-    cy.get('.app-button').click()
     cy.get('.dashboard-table').find('.information-cell-team').contains('2 Centro').click()
 
     cy.get('.novelties-index-container').find('.novelty-colum').find('.list-novelty').wait(2000).find('.list-card-novelty').each(($el, index, $list) => {
       const NumberGuia = $el.find('h3.parcel-number').text()
-      if (NumberGuia.includes('03200098285')) {
+      if (NumberGuia.includes('03200098310')) {
         $el.find('button').first().click()
       }
     })
     cy.wait(2000)
     cy.get('.mat-menu-content').find('.mat-menu-item').contains('Cerrar a futura reclamación').wait(2000).click()
-    cy.get('.solutions-dialog-create_content').find('#mat-input-2').type('Comentarios3')
+    cy.get('.solutions-dialog-create_content').find('#mat-input-2').click().type('Comentarios3')
     cy.get('.app-button').click()
   })
 
   it('Novedades Inferiores  - Generar notificación de mercancía afectada', function () {
-    cy.visit("https://app-dot-cm-novedades-checkpoint-test.appspot.com/#/login");
-    cy.get('#mat-input-0').type('pruebas')
-    cy.get('#mat-input-1').type('pruebas')
-    cy.get('.mat-icon').click()
-    cy.get('.app-button').click()
     cy.get('.dashboard-table').find('.information-cell-team').contains('2 Centro').click()
 
     cy.get('.novelties-index-container').find('.novelty-colum').find('.list-novelty').wait(2000).find('.list-card-novelty').each(($el, index, $list) => {
       const NumberGuia = $el.find('h3.parcel-number').text()
-      if (NumberGuia.includes('03200098286')) {
+      if (NumberGuia.includes('03200098310')) {
         $el.find('button').first().click()
       }
     })
@@ -168,16 +134,11 @@ describe('Novedades de recogidas', function () {
   })
 
   it('Novedades Inferiores  - Cerrado por incidencia', function () {
-    cy.visit("https://app-dot-cm-novedades-checkpoint-test.appspot.com/#/login");
-    cy.get('#mat-input-0').type('pruebas')
-    cy.get('#mat-input-1').type('pruebas')
-    cy.get('.mat-icon').click()
-    cy.get('.app-button').click()
     cy.get('.dashboard-table').find('.information-cell-team').contains('2 Centro').click()
 
     cy.get('.novelties-index-container').find('.novelty-colum').find('.list-novelty').wait(2000).find('.list-card-novelty').each(($el, index, $list) => {
       const NumberGuia = $el.find('h3.parcel-number').text()
-      if (NumberGuia.includes('03200098287')) {
+      if (NumberGuia.includes('03200098310')) {
         $el.find('button').first().click()
       }
     })
@@ -189,16 +150,11 @@ describe('Novedades de recogidas', function () {
     cy.get('.app-button').click()
   })
   it('Novedades Inferiores  - Cruzar con sobrante CM', function () {
-    cy.visit("https://app-dot-cm-novedades-checkpoint-test.appspot.com/#/login");
-    cy.get('#mat-input-0').type('pruebas')
-    cy.get('#mat-input-1').type('pruebas')
-    cy.get('.mat-icon').click()
-    cy.get('.app-button').click()
     cy.get('.dashboard-table').find('.information-cell-team').contains('2 Centro').click()
 
     cy.get('.novelties-index-container').find('.novelty-colum').find('.list-novelty').wait(2000).find('.list-card-novelty').each(($el, index, $list) => {
       const NumberGuia = $el.find('h3.parcel-number').text()
-      if (NumberGuia.includes('03200098288')) {
+      if (NumberGuia.includes('03200098310')) {
         $el.find('button').first().click()
       }
     })
@@ -210,16 +166,11 @@ describe('Novedades de recogidas', function () {
   })
 
   it('Novedades Inferiores  - No fue posible leer las unidades', function () {
-    cy.visit("https://app-dot-cm-novedades-checkpoint-test.appspot.com/#/login");
-    cy.get('#mat-input-0').type('pruebas')
-    cy.get('#mat-input-1').type('pruebas')
-    cy.get('.mat-icon').click()
-    cy.get('.app-button').click()
     cy.get('.dashboard-table').find('.information-cell-team').contains('2 Centro').click()
 
     cy.get('.novelties-index-container').find('.novelty-colum').find('.list-novelty').wait(2000).find('.list-card-novelty').each(($el, index, $list) => {
       const NumberGuia = $el.find('h3.parcel-number').text()
-      if (NumberGuia.includes('03200098289')) {
+      if (NumberGuia.includes('03200098310')) {
         $el.find('button').first().click()
       }
     })
@@ -231,22 +182,12 @@ describe('Novedades de recogidas', function () {
   })
 
   it('Guia cero/Unidades cero', function () {
-    cy.visit('http://app-dot-cm-novedades-checkpoint-test.appspot.com/#/login');
-    cy.get('#mat-input-0').type('pruebas')
-    cy.get('#mat-input-1').type('pruebas')
-    cy.get('.mat-icon').click()
-    cy.get('.app-button').click()
     cy.get('.dashboard-table').find('.clickable-element-row').contains('18 Sabaneta').click()
     cy.wait(1000)
     cy.get('.mat-button').click()
 })
 
 it('Novedades Superiores Cruzar contra faltante CM Accion', function() {
-  cy.visit("https://app-dot-cm-novedades-checkpoint-test.appspot.com/#/login");
-  cy.get('#mat-input-0').type('pruebas')
-  cy.get('#mat-input-1').type('pruebas')
-  cy.get('.mat-icon').click()
-  cy.get('.app-button').click()
   cy.get('.dashboard-table').find('.information-cell-team').contains('2 Centro').click()
       
   cy.get('.novelties-index-container').find('.novelty-colum').find('.list-novelty').wait(2000).find('.list-card-novelty').each(($el,index,$list)=>{  
@@ -265,13 +206,8 @@ it('Novedades Superiores Cruzar contra faltante CM Accion', function() {
 
 })
 
-  it('Novedades Superiores Cruzar contra faltante cliente Accion', function() {
-  cy.visit("https://app-dot-cm-novedades-checkpoint-test.appspot.com/#/login");
-  cy.get('#mat-input-0').type('pruebas')
-  cy.get('#mat-input-1').type('pruebas')
-  cy.get('.mat-icon').click()
-  cy.get('.app-button').click()
-  cy.get('.dashboard-table').find('.information-cell-team').contains('2 Centro').click()
+  it('Detalle de la guia - Novedades Superiores Cruzar contra faltante cliente Accion', function() {
+  cy.get('.dashboard-table').find('.information-cell-team').contains('2 Centro').wait(2000).click()
   
   cy.get('.novelties-index-container').find('.novelty-colum').find('.list-novelty').wait(2000).find('.list-card-novelty').each(($el,index,$list)=>{  
   const NumberGuia=$el.find('h3.parcel-number').text()
@@ -289,19 +225,15 @@ it('Novedades Superiores Cruzar contra faltante CM Accion', function() {
 
 }) 
       
-  it('Novedades Superiores Devolver/cambio destino Accion', function() {
-  cy.visit("https://app-dot-cm-novedades-checkpoint-test.appspot.com/#/login");
-  cy.get('#mat-input-0').type('pruebas')
-  cy.get('#mat-input-1').type('pruebas')
-  cy.get('.mat-icon').click()
-  cy.get('.app-button').click()
+
+  it('Detalle de la guia - Novedades Superiores Devolver/cambio destino Accion', function() {
   cy.get('.dashboard-table').find('.information-cell-team').contains('2 Centro').click()
               
-  cy.get('.novelties-index-container').find('.novelty-colum').find('.list-novelty').wait(2000).find('.list-card-novelty').each(($el,index,$list)=>{  
+  cy.get('.novelties-index-container').find('.novelty-colum').find('.list-novelty').wait(2000).find('.list-card-novelty').wait(2000).each(($el,index,$list)=>{  
   const NumberGuia=$el.find('h3.parcel-number').text()
-  if (NumberGuia.includes('20025027633'))
+  if (NumberGuia.includes('03200098274'))
   {
-   $el.find('.parcel-number').first().click()
+   $el.find('.parcel-number').wait(2000).click({force: true})
   }
 }) 
   cy.wait(2000)
@@ -312,17 +244,12 @@ it('Novedades Superiores Cruzar contra faltante CM Accion', function() {
   cy.get('.mat-form-field-flex').find('#mat-input-2').type('Comentario3')
   cy.get('.app-button').click()
 
-})  
+})
  
   it('Novedades Superiores Entregar sobrante a destinatario Accion', function() {
-  cy.visit("https://app-dot-cm-novedades-checkpoint-test.appspot.com/#/login");
-  cy.get('#mat-input-0').type('pruebas')
-  cy.get('#mat-input-1').type('pruebas')
-  cy.get('.mat-icon').click()
-  cy.get('.app-button').click()
   cy.get('.dashboard-table').find('.information-cell-team').contains('2 Centro').click()
         
-  cy.get('.novelties-index-container').find('.novelty-colum').find('.list-novelty').wait(2000).find('.list-card-novelty').each(($el,index,$list)=>{  
+  cy.get('.novelties-index-container').find('.novelty-colum').find('.list-novelty').wait(2000).find('.list-card-novelty').wait(2000).each(($el,index,$list)=>{  
   const NumberGuia=$el.find('h3.parcel-number').text()
   if (NumberGuia.includes('20025027613'))
   {
@@ -341,44 +268,12 @@ it('Novedades Superiores Cruzar contra faltante CM Accion', function() {
 
 }) 
   
-  it('Novedades Inferiores Cliente no despachó Accion', function() {
-  cy.visit("https://app-dot-cm-novedades-checkpoint-test.appspot.com/#/login");
-  cy.get('#mat-input-0').type('pruebas')
-  cy.get('#mat-input-1').type('pruebas')
-  cy.get('.mat-icon').click()
-  cy.get('.app-button').click()
-  cy.get('.dashboard-table').find('.information-cell-team').contains('2 Centro').click()
-                      
-  cy.get('.novelties-index-container').find('.novelty-colum').find('.list-novelty').wait(2000).find('.list-card-novelty').each(($el,index,$list)=>{  
-  const NumberGuia=$el.find('h3.parcel-number').text()
-  if (NumberGuia.includes('03200098290'))
-  {
-    $el.find('.parcel-number').first().click()
-  }
-}) 
-      
-  cy.wait(2000)
-  cy.get('.nav-actions').click()
-  cy.get('.mat-menu-content').contains('Cliente no despachó').wait(2000).click()
-  cy.wait(2000)
-  cy.get('#mat-input-3').type('Nombre5')
-  cy.get('#mat-input-4').type('Apellidos5')
-  cy.get('.mat-form-field-flex').find('#mat-input-2').type('Comentario5')
-  cy.get('.app-button').click()
-    
-})
-
-  it('Novedades Inferiores  Cerrado por el Cliente', function () {
-  cy.visit("https://app-dot-cm-novedades-checkpoint-test.appspot.com/#/login");
-  cy.get('#mat-input-0').type('pruebas')
-  cy.get('#mat-input-1').type('pruebas')
-  cy.get('.mat-icon').click()
-  cy.get('.app-button').click()
+  it('Detalle de la guia - Novedades Inferiores Cerrado por el Cliente', function () {
   cy.get('.dashboard-table').find('.information-cell-team').contains('2 Centro').click()
                         
   cy.get('.novelties-index-container').find('.novelty-colum').find('.list-novelty').wait(2000).find('.list-card-novelty').each(($el,index,$list)=>{  
   const NumberGuia=$el.find('h3.parcel-number').text()
-  if (NumberGuia.includes('03200098289'))
+  if (NumberGuia.includes('03200098310'))
   {
     $el.find('.parcel-number').first().click()
   }
@@ -395,17 +290,12 @@ it('Novedades Superiores Cruzar contra faltante CM Accion', function() {
     
 })   
 
-  it('Novedades Inferiores Cerrar a futura reclamación Accion', function() {
-  cy.visit("https://app-dot-cm-novedades-checkpoint-test.appspot.com/#/login");
-  cy.get('#mat-input-0').type('pruebas')
-  cy.get('#mat-input-1').type('pruebas')
-  cy.get('.mat-icon').click()
-  cy.get('.app-button').click()
-  cy.get('.dashboard-table').find('.information-cell-team').contains('2 Centro').click()
+  it('Detalle de la guia - Novedades Inferiores Cerrar a futura reclamación Accion', function() {
+  cy.get('.dashboard-table').find('.information-cell-team').contains('2 Centro').click({force: true})
                 
   cy.get('.novelties-index-container').find('.novelty-colum').find('.list-novelty').wait(2000).find('.list-card-novelty').each(($el,index,$list)=>{  
   const NumberGuia=$el.find('h3.parcel-number').text()
-  if (NumberGuia.includes('03200098288'))
+  if (NumberGuia.includes('03200098310'))
   {
     $el.find('.parcel-number').first().click()
   }
@@ -421,16 +311,11 @@ it('Novedades Superiores Cruzar contra faltante CM Accion', function() {
  })
 
   it('Novedades Inferiores Generar notificación de mercancía afectada Accion', function() {
-  cy.visit("https://app-dot-cm-novedades-checkpoint-test.appspot.com/#/login");
-  cy.get('#mat-input-0').type('pruebas')
-  cy.get('#mat-input-1').type('pruebas')
-  cy.get('.mat-icon').click()
-  cy.get('.app-button').click()
   cy.get('.dashboard-table').find('.information-cell-team').contains('2 Centro').click()
                 
   cy.get('.novelties-index-container').find('.novelty-colum').find('.list-novelty').wait(2000).find('.list-card-novelty').each(($el,index,$list)=>{  
   const NumberGuia=$el.find('h3.parcel-number').text()
-  if (NumberGuia.includes('03200098287'))
+  if (NumberGuia.includes('03200098310'))
   {
     $el.find('.parcel-number').first().click()
   }
@@ -445,17 +330,12 @@ it('Novedades Superiores Cruzar contra faltante CM Accion', function() {
     
  })
 
-  it('Novedades Inferiores Cerrado por incidencia Accion', function() {
-  cy.visit("https://app-dot-cm-novedades-checkpoint-test.appspot.com/#/login");
-  cy.get('#mat-input-0').type('pruebas')
-  cy.get('#mat-input-1').type('pruebas')
-  cy.get('.mat-icon').click()
-  cy.get('.app-button').click()
+  it('Detalle de la guia - Novedades Inferiores Cerrado por incidencia Accion', function() {
   cy.get('.dashboard-table').find('.information-cell-team').contains('2 Centro').click()
                 
   cy.get('.novelties-index-container').find('.novelty-colum').find('.list-novelty').wait(2000).find('.list-card-novelty').each(($el,index,$list)=>{  
   const NumberGuia=$el.find('h3.parcel-number').text()
-  if (NumberGuia.includes('03200098286'))
+  if (NumberGuia.includes('03200098310'))
   {
     $el.find('.parcel-number').first().click()
   }
@@ -465,22 +345,17 @@ it('Novedades Superiores Cruzar contra faltante CM Accion', function() {
   cy.get('.nav-actions').click()
   cy.get('.mat-menu-content').contains('Cerrado por incidencia').wait(2000).click()
   cy.wait(2000)
-  cy.get('.mat-form-field-flex').find('#mat-input-2').type('Comentario9')
+  cy.get('.mat-form-field-flex').click().find('#mat-input-2').click().type('Comentario9')
   cy.get('.app-button').click()
     
  })
 
-  it('Novedades Inferiores Cruzar con sobrante CM  Accion', function() {
-  cy.visit("https://app-dot-cm-novedades-checkpoint-test.appspot.com/#/login");
-  cy.get('#mat-input-0').type('pruebas')
-  cy.get('#mat-input-1').type('pruebas')
-  cy.get('.mat-icon').click()
-  cy.get('.app-button').click()
+  it('Detalle de la guia - Novedades Inferiores Cruzar con sobrante CM  Accion', function() {
   cy.get('.dashboard-table').find('.information-cell-team').contains('2 Centro').click()
                 
   cy.get('.novelties-index-container').find('.novelty-colum').find('.list-novelty').wait(2000).find('.list-card-novelty').each(($el,index,$list)=>{  
   const NumberGuia=$el.find('h3.parcel-number').text()
-  if (NumberGuia.includes('03200098286'))
+  if (NumberGuia.includes('03200098310'))
   {
     $el.find('.parcel-number').first().click()
   }
@@ -495,38 +370,34 @@ it('Novedades Superiores Cruzar contra faltante CM Accion', function() {
     
  })
 
- it('Novedades Inferiores No fue posible leer las unidades Accion', function() {
-  cy.visit("https://app-dot-cm-novedades-checkpoint-test.appspot.com/#/login");
-  cy.get('#mat-input-0').type('pruebas')
-  cy.get('#mat-input-1').type('pruebas')
-  cy.get('.mat-icon').click()
-  cy.get('.app-button').click()
-  cy.get('.dashboard-table').find('.information-cell-team').contains('2 Centro').click()
-                
-  cy.get('.novelties-index-container').find('.novelty-colum').find('.list-novelty').wait(2000).find('.list-card-novelty').each(($el,index,$list)=>{  
+ it('Detalle de la guia - Novedades Inferiores No fue posible leer las unidades Accion', function() {
+  cy.get('.dashboard-table').find('.information-cell-team').contains('2 Centro').click()              
+  cy.get('.novelties-index-container').wait(1000).find.wait(1000)('.novelty-colum').wait(1000).find('.list-novelty').wait(2000).find('.list-card-novelty').wait(2000).each(($el,index,$list)=>{  
   const NumberGuia=$el.find('h3.parcel-number').text()
-  if (NumberGuia.includes('03200098285'))
+  if (NumberGuia.includes('03200098309'))
   {
-    $el.find('.parcel-number').first().click()
+    $el.find('.parcel-number').first().wait(2000).click( {force: true})
   }
 }) 
-  
   cy.wait(2000)
   cy.get('.nav-actions').click()
   cy.get('.mat-menu-content').contains('No fue posible leer las unidades').wait(2000).click()
   cy.wait(2000)
   cy.get('.mat-form-field-flex').find('#mat-input-2').type('Comentario11')
   cy.get('.app-button').click()
-
-  cy.get('.icon-go-back').click()
-  cy.get('.icon-go-back').click()
-  cy.wait(2000)
-  cy.get('.mat-icon').click()
-  cy.wait(2000)
-  cy.get('.account-menu').contains('Cerrar sesión').click()
-    
  })
-              
+   
+ after(function()
+ {
+ cy.get('.icon-go-back').click()
+ cy.wait(2000)
+ cy.get('.icon-go-back').click()
+ cy.wait(2000)
+ cy.get('.mat-icon').click()
+ cy.wait(2000)
+ cy.get('.account-menu').contains('Cerrar sesión').click()
+ })
+
 })
 
 
